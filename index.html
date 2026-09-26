@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAC Global｜香港零售渠道上架</title>
+<style>
+
+  :root {
+    --db-blue: #0061FF;
+    --ink: #1E1919;
+    --bg: #FFFFFF;
+    --wash: #F4F8FF;
+    --white: #FFFFFF;
+    --muted: #6B6566;
+    --grid: #C9DDFF;
+    --grid-soft: #E8F1FF;
+    --line: #C9DDFF;
+    --rail-w: 56px;
+    --tab: 8px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "PingFang HK", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin-left: 0;
+    min-height: 100vh;
+  }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+
+  /* Modular pale-blue grid utility */
+  .grid-bg {
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 47px, var(--grid) 47px, var(--grid) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, var(--grid) 47px, var(--grid) 48px);
+    background-size: 48px 48px;
+  }
+
+  /* Hero — dark asymmetric plane */
+  header.hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 56px 0 48px;
+    position: relative;
+    overflow: hidden;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(201,221,255,0.18) 47px, rgba(201,221,255,0.18) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(201,221,255,0.18) 47px, rgba(201,221,255,0.18) 48px);
+    background-size: 48px 48px;
+  }
+  .hero-grid {
+    display: block;
+    max-width: 860px;
+  }
+  .hero .en {
+    color: var(--db-blue);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5.2vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 18px;
+    color: #fff;
+    font-weight: 800;
+  }
+  .hero .subline {
+    color: rgba(255,255,255,0.88);
+    font-size: 17px;
+    font-weight: 600;
+    max-width: 720px;
+    margin: 0 0 14px;
+    line-height: 1.45;
+  }
+  .hero .lede {
+    color: rgba(255,255,255,0.62);
+    max-width: 760px;
+    margin: 0 0 28px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--db-blue);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 0;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    letter-spacing: 0.01em;
+  }
+  .btn:hover { filter: brightness(1.06); }
+  .btn-accent { background: var(--db-blue); }
+
+  section {
+    padding: 64px 0;
+    background-color: var(--bg);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 47px, var(--grid-soft) 47px, var(--grid-soft) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, var(--grid-soft) 47px, var(--grid-soft) 48px);
+    background-size: 48px 48px;
+  }
+  section.alt {
+    background-color: var(--wash);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 47px, var(--grid) 47px, var(--grid) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, var(--grid) 47px, var(--grid) 48px);
+    background-size: 48px 48px;
+  }
+  /* Section title: blue square tab prefix (Dropbox plane language) */
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: var(--db-blue);
+    margin-right: 12px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+  }
+  .cta h2::before { background: #fff; }
+  h2 {
+    font-size: clamp(26px, 3.8vw, 36px);
+    color: var(--ink);
+    margin: 0 0 14px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+  .muted { color: var(--muted); }
+
+  .channel-intel .intel-note {
+    margin: 18px 0 24px; padding: 14px 18px; background: var(--white);
+    border: 1px solid var(--grid); border-left: 4px solid var(--db-blue);
+    color: var(--muted); font-size: 14px;
+  }
+  .intel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 22px; }
+  .intel-card { background: var(--white); border: 1px solid var(--line); padding: 20px; }
+  .intel-card h3 { margin: 0 0 12px; font-size: 18px; color: var(--ink); }
+  .intel-card ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
+  .intel-card li { margin: 7px 0; }
+  .known { color: #075d32; font-weight: 750; }
+  .pending { color: #8a4b00; font-weight: 750; }
+  .intel-source { margin-top: 24px; font-size: 13px; color: var(--muted); }
+  .note {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--wash);
+    border: 1px solid var(--grid);
+    border-left: 3px solid var(--db-blue);
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .card {
+    position: relative;
+    background:
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 100% / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 100% / var(--tab) var(--tab) no-repeat,
+      var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: none;
+  }
+  section.alt .card {
+    background:
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 100% / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 100% / var(--tab) var(--tab) no-repeat,
+      var(--white);
+  }
+  .card .icon {
+    width: 36px; height: 36px;
+    border-radius: 0;
+    background: var(--db-blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .card .icon span { line-height: 1; }
+  .card h3 { margin: 0; font-size: 17px; color: var(--ink); font-weight: 750; }
+  .card .body { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.65; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0; }
+  .tag {
+    background: var(--grid-soft);
+    border: 1px solid var(--grid);
+    border-radius: 0;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: var(--ink);
+    font-weight: 600;
+    box-shadow: none;
+  }
+  section.alt .tag { background: var(--white); }
+  .card .foot {
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    border-top: 1px solid var(--grid);
+  }
+
+  .sell-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .sell-point {
+    position: relative;
+    background:
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 100% / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 100% / var(--tab) var(--tab) no-repeat,
+      var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    padding: 22px 20px;
+    box-shadow: none;
+  }
+  .sell-point h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 750;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sell-point h3::before {
+    content: "";
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: var(--db-blue);
+    flex-shrink: 0;
+  }
+  .sell-point p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .logo-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    margin: 6px 0 4px;
+    padding: 12px;
+    background: var(--wash);
+    border: 1px solid var(--grid);
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+  }
+  section.alt .logo-chips { background: var(--white); }
+  .logo-chip {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 10px;
+    background:
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 0 / 6px 6px no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 0 / 6px 6px no-repeat,
+      var(--white);
+    border: 1px solid var(--grid);
+    border-radius: 0;
+    padding: 12px 14px;
+    min-height: 72px;
+    min-width: min(100%, 200px);
+    flex: 1 1 200px;
+    max-width: 280px;
+    box-shadow: none;
+  }
+  .logo-chip .logo-mark {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 56px;
+  }
+  .logo-chip img {
+    display: block;
+    max-height: 72px;
+    max-width: 100%;
+    width: auto; height: auto;
+    object-fit: contain;
+  }
+  .logo-chip .logo-name {
+    font-size: 12px;
+    font-weight: 650;
+    color: var(--ink);
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+  }
+  .logo-chip.text-chip {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    font-size: 15px; font-weight: 700; color: var(--ink);
+    letter-spacing: 0.02em; padding: 16px 18px;
+    background: var(--wash);
+  }
+  .logo-chip.text-chip .logo-name { font-size: 15px; text-align: center; }
+
+  #product-photos { padding-top: 56px; padding-bottom: 56px; }
+  .product-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .product-shot {
+    position: relative;
+    background:
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 100% / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 100% / var(--tab) var(--tab) no-repeat,
+      var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+  }
+  .product-shot img {
+    width: 100%;
+    aspect-ratio: 5/4;
+    object-fit: cover;
+    object-position: center;
+    background: var(--wash);
+    display: block;
+    filter: saturate(0.92) contrast(1.02);
+  }
+  .product-shot .meta {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--grid);
+    background: var(--white);
+  }
+  .product-shot .meta strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .step {
+    position: relative;
+    background:
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 0 / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 0 100% / var(--tab) var(--tab) no-repeat,
+      linear-gradient(var(--db-blue), var(--db-blue)) 100% 100% / var(--tab) var(--tab) no-repeat,
+      var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    padding: 20px 18px;
+    box-shadow: none;
+  }
+  .step .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 6px;
+    background: var(--db-blue);
+    color: #fff;
+    font-weight: 800;
+    font-size: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .step h3 { margin: 0 0 8px; font-size: 16px; color: var(--ink); font-weight: 750; }
+  .step p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .cta {
+    position: relative;
+    background: var(--ink);
+    color: #fff;
+    padding: 64px 0;
+    text-align: left;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(201,221,255,0.14) 47px, rgba(201,221,255,0.14) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(201,221,255,0.14) 47px, rgba(201,221,255,0.14) 48px);
+    background-size: 48px 48px;
+  }
+  .cta::before,
+  .cta::after {
+    content: "";
+    position: absolute;
+    width: 12px; height: 12px;
+    background: var(--db-blue);
+  }
+  .cta::before { top: 0; left: 0; }
+  .cta::after { bottom: 0; right: 0; }
+  .cta h2 { color: #fff; }
+  .cta p {
+    color: rgba(255,255,255,0.72);
+    max-width: 560px;
+    margin: 0 0 28px;
+    font-size: 15px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 22px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--grid);
+    background: var(--white);
+  }
+
+  @media (max-width: 900px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 700px) {
+    .cards { grid-template-columns: 1fr; }
+    .intel-grid { grid-template-columns: 1fr; }
+    .sell-points { grid-template-columns: 1fr; }
+    .product-gallery { grid-template-columns: 1fr; gap: 12px; }
+    header.hero { padding: 40px 0 36px; }
+    section { padding: 40px 0; }
+    .hero h1 { font-size: clamp(26px, 7vw, 36px); }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+
+
+
+  footer .footer-contact {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  footer .footer-contact a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  footer .footer-contact a:hover {
+    color: var(--db-blue);
+    border-bottom-color: var(--db-blue);
+  }
+
+  /* Stats — solid blue plane + construction grid */
+  .stats {
+    background: var(--db-blue);
+    color: #fff;
+    padding: 48px 0;
+    position: relative;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 47px, rgba(255,255,255,0.12) 47px, rgba(255,255,255,0.12) 48px),
+      repeating-linear-gradient(90deg, transparent, transparent 47px, rgba(255,255,255,0.12) 47px, rgba(255,255,255,0.12) 48px);
+    background-size: 48px 48px;
+  }
+  .stats::before,
+  .stats::after {
+    content: "";
+    position: absolute;
+    width: 12px; height: 12px;
+    background: #fff;
+    z-index: 1;
+  }
+  .stats::before { top: 0; left: var(--rail-w, 0); }
+  .stats::after { top: 0; right: 0; }
+  .stats-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 36px;
+  }
+  .stats .num {
+    font-size: clamp(52px, 10vw, 80px);
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.04em;
+    text-align: left;
+  }
+  .stats .num span { color: #fff; }
+  .stats .label {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px 0 0;
+    text-align: left;
+    letter-spacing: 0.04em;
+  }
+  .stats .sub {
+    margin: 0;
+    max-width: 560px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.65;
+  }
+
+
+</style>
+</head>
+<body>
+<div class="page">
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="en">Retail listing for brands entering Hong Kong</div>
+      <h1>協助品牌產品進入香港零售渠道</h1>
+      <p class="subline">由渠道建議、資料準備至落地執行，本地團隊跟進實體及線上鋪貨。</p>
+      <p class="lede">將玩具、精品、文具或 Lifestyle 產品導入香港零售架，關鍵往往不在於取得單一聯絡方式，而在於找到與產品定位相符的進場路徑。我們按目標客群與價格帶，建議合適的零售類型——包括玩具專門店、書店、Lifestyle，以至便利店與超市——並協助整理上架資料、對接零售商，以及跟進入貨與陳列節奏。</p>
+      <a class="btn" href="#contact">查詢上架方案</a>
+    </div>
+</div>
+</header>
+
+<section class="stats" aria-label="零售網絡規模">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div>
+        <p class="num"><span>1,000+</span></p>
+        <p class="label">零售店網絡</p>
+      </div>
+      <div>
+        <p class="sub">我們可按產品定位、客群及採購節奏，協助品牌評估香港零售渠道。實際可上架的門店數目與時間表，仍視乎產品資料、渠道採購安排及逐項確認結果。</p>
+        <p class="sub" style="margin-top:10px;font-size:13px;opacity:0.85;">網絡涵蓋便利店、超市、玩具專門店、書店及 Lifestyle；建議先對準適合客群的渠道，再按銷售表現逐步擴展。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section>
+  <div class="wrap">
+    <h2>上架不只是提交表格</h2>
+    <p class="muted">品牌進入香港零售市場，常見困難包括：渠道選擇不當、準備資料不足，以及上架後欠缺持續跟進。我們將工作整理為可執行的流程：先了解產品與目標客群，再配對玩具專門店、書店、Lifestyle，以及便利店與超市型渠道。</p>
+
+    <div class="sell-points" id="selling-points">
+      <div class="sell-point">
+        <h3>省卻供應商開戶手續</h3>
+        <p>進入零售渠道往往需要逐間開立供應商戶口，文件、程序與往返耗時。我們協助處理相關準備與對接，讓品牌把精力放回產品與銷售，而非重複的行政流程。</p>
+      </div>
+      <div class="sell-point">
+        <h3>掌握各零售商的品牌要求</h3>
+        <p>不同零售商對品類、資料、認證、陳列與入貨節奏的要求並不一致。我們按各店實務整理與對齊，減少因資料不符或方向偏差而延誤進場。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>適合與我們合作的產品</h2>
+    <p class="muted">海外、內地、台灣及本地的玩具精品、文具、lifestyle、IP相關產品、食品、飲品及生活百貨用品等等，只要客群清晰、供應節奏穩定，均可由渠道評估起步。無論您是代理或品牌方，若希望在香港實體店——包括專門店、便利店、超市——及線上選品取得穩定曝光，我們可先協助對齊「哪一類渠道較值得優先洽談」。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>香港零售網絡：按品類配對</h2>
+    <p class="muted">以下按四類整理可評估的銷售渠道。Logo 只作渠道類型示意，不代表 SAC Global 已與相關機構建立合作或任何產品已獲接納；實際進場須按產品屬性、價位及各店採購節奏逐項確認。</p>
+    <div class="cards">
+      <article class="card">
+        <div class="icon" aria-hidden="true"><span>01</span></div>
+        <h3>Toys Retailer &amp; Supermarket <span class="tag" style="margin-left:4px;vertical-align:middle;">含便利店／超市</span></h3>
+        <p class="body">玩具專門店、超市角色專區，以及便利店／超市覆蓋。適合大小 IP、窗盒／盒玩、STEM、季節限定及衝動購買價位的產品。便利店線多以預購或選定 SKU 為主；超市則視品類與陳列位置而定。</p>
+        
+                <div class="logo-chips" aria-label="Toys／便利店／超市渠道 logo">
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/toysrus.svg" alt="Toys&quot;R&quot;Us"/></span><span class="logo-name">Toys"R"Us</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/7eleven.svg" alt="7-Eleven"/></span><span class="logo-name">7-Eleven</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/apita.svg" alt="APITA"/></span><span class="logo-name">APITA</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/ideas.png" alt="IDEAS"/></span><span class="logo-name">IDEAS</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/gift-and-take.png" alt="Gift &amp; Take"/></span><span class="logo-name">Gift &amp; Take</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/tiny.png" alt="TINY"/></span><span class="logo-name">TINY</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/simply-toys.png" alt="Simply Toys"/></span><span class="logo-name">Simply Toys</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/boutique.png" alt="精品"/></span><span class="logo-name">精品</span></span>
+        </div>
+<p class="foot">專門店著重深度與形象；7-Eleven、APITA 等便利店／超市線則補強覆蓋與接觸點——宜先對準客單與陳列方式。</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true"><span>02</span></div>
+        <h3>Book Store</h3>
+        <p class="body">書店及質感生活館。適合具教育敘事、木製／布藝、安靜桌遊及送禮導向的精品——較少適合大型、嘈雜的塑膠玩具。</p>
+        
+                <div class="logo-chips" aria-label="書店渠道 logo">
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/bookazine.png" alt="Bookazine"/></span><span class="logo-name">Bookazine</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/eslite.svg" alt="誠品 eslite"/></span><span class="logo-name">誠品</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/joint-publishing.svg" alt="三聯書店"/></span><span class="logo-name">三聯</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/commercial-press.png" alt="商務印書館"/></span><span class="logo-name">商務</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/chunghwa.png" alt="中華書局"/></span><span class="logo-name">中華</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/homeless.png" alt="Homeless"/></span><span class="logo-name">Homeless</span></span>
+        </div>
+<p class="foot">以故事與設計感進入店面，而非依賴過於搶眼的包裝。</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true"><span>03</span></div>
+        <h3>Lifestyle</h3>
+        <p class="body">潮流店、收藏店、電子配件及概念店。適合具話題性的小物、收藏系列、實用與潮玩結合的產品，以及適合上鏡的 gadget。</p>
+        
+                <div class="logo-chips" aria-label="Lifestyle 渠道 logo">
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/wilson.png" alt="Wilson 衛訊"/></span><span class="logo-name">Wilson</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/toyzone.png" alt="TOYZONE"/></span><span class="logo-name">TOYZONE</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/wake.png" alt="Wake"/></span><span class="logo-name">Wake</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/cog.png" alt="COG"/></span><span class="logo-name">COG</span></span>
+          <span class="logo-chip text-chip"><span class="logo-name">KOL POP</span></span>
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/shell-house.png" alt="Small House / Shell House"/></span><span class="logo-name">Small House</span></span>
+        </div>
+<p class="foot">體積小、週轉快，並能以一句話清楚說明賣點，較易打開第一道門。</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true"><span>04</span></div>
+        <h3>Theme Park</h3>
+        <p class="body">園區零售以自有及授權體系為主，外來品牌較難直接上架。若已具備 Disney／Pixar 等相關授權，或有明確的園區／旅行零售合作路徑，我們可一併評估可行性；短期內不會視之為一般鋪貨目標而強行推進。</p>
+        
+                <div class="logo-chips" aria-label="主題公園渠道 logo">
+<span class="logo-chip"><span class="logo-mark"><img src="assets/logos/clean/hong-kong-disneyland.png" alt="Hong Kong Disneyland"/></span><span class="logo-name">香港迪士尼</span></span>
+        </div>
+<p class="foot">須具備授權或既定路徑，方可評估；非一般鋪貨目標。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt channel-intel" id="channel-intel">
+  <div class="wrap">
+    <h2>渠道合作與入貨要點</h2>
+    <p class="muted">以下只涵蓋四類銷售渠道，並把現有資料中的合作跡象與仍需核實的事項分開列出，方便品牌先準備入貨資料，再決定洽談次序。</p>
+    <div class="intel-note"><strong>閱讀方式：</strong><span class="known">【已知】</span> 只指現有資料夾／文件出現的具體合作跡象，並不等同於現時有效合約、已獲採購批准或保證上架；<span class="pending">【待確認】</span> 代表尚未有足夠證據，須按品牌、SKU、價格、條碼、認證、供貨及店舖採購安排逐項核實。</div>
+    <div class="intel-grid">
+      <article class="intel-card">
+        <h3>01｜Toys Retailer &amp; Supermarket</h3>
+        <ul>
+          <li><span class="known">【已知】</span> Toys&quot;R&quot;Us：Robosen Sales Partner 資料夾；Mideer price lists。</li>
+          <li><span class="known">【已知】</span> 7-Eleven：Robosen「Seven」、Playshifu「7-11」、Enesco Peanuts Britto「7-11 marketing」資料。</li>
+          <li><span class="known">【已知】</span> IDEAS：Robosen Sales Partner 的 Jowin（Ideas）資料夾；TINY：Toyeast（Tiny）資料夾。</li>
+          <li><span class="pending">【待確認】</span> APITA、GIFT&amp;TAKE、Simply Toys、精品：品牌／SKU 的實際入貨可能性與採購窗口未核實。</li>
+        </ul>
+      </article>
+      <article class="intel-card">
+        <h3>02｜Book Store</h3>
+        <ul>
+          <li><span class="known">【已知】</span> 誠品：Playshifu「Eslite」資料。</li>
+          <li><span class="pending">【待確認】</span> Bookazine、三聯、商務、中華、Homeless：尚未有上述已知資料夾／文件證據支持本頁所列品牌的入貨合作。</li>
+          <li><span class="pending">【待確認】</span> 書店渠道須按產品教育性、設計感、包裝、價位及陳列尺寸逐店評估。</li>
+        </ul>
+      </article>
+      <article class="intel-card">
+        <h3>03｜Lifestyle</h3>
+        <ul>
+          <li><span class="known">【已知】</span> TOYZONE、Wake、Wilson：Robosen Sales Partner 的 ToyZone、Wake Concept Store、Wilson 資料夾。</li>
+          <li><span class="pending">【待確認】</span> COG、KOL POP、Small House：尚未有具體合作證據；須先核實採購方向及適合 SKU。</li>
+          <li><span class="pending">【待確認】</span> 其餘品牌需準備零售價、批發價、條碼、箱規、圖庫及供貨節奏，才能作入貨判斷。</li>
+        </ul>
+      </article>
+      <article class="intel-card">
+        <h3>04｜Theme Park</h3>
+        <ul>
+          <li><span class="known">【已知】</span> 香港迪士尼：Robosen Sales Partner 的 Disneyland 資料夾。</li>
+          <li><span class="pending">【待確認】</span> 上述資料只代表合作跡象，不代表任何品牌已取得園區採購、授權或上架批准。</li>
+          <li><span class="pending">【待確認】</span> 須先確認品牌授權、產品合規、園區採購窗口及指定供貨條件；不作一般鋪貨渠道承諾。</li>
+        </ul>
+      </article>
+    </div>
+    <p class="intel-source">資料口徑：本頁以 2026-09-26 可取得的資料夾／文件名稱作初步渠道整理；完整狀態與待核實事項另見 <a href="channel-intel.md">channel-intel.md</a>。</p>
+  </div>
+</section>
+
+<section class="alt" id="product-photos">
+  <div class="wrap">
+    <h2>已上架產品實拍</h2>
+    <p class="muted">以下為已進入香港零售點的店內實拍（Toys"R"Us、Simply Toys、Bookazine、誠品、Homeless 等）。實際可上架門店與時間表，仍視乎產品定位、資料齊備程度及各零售商採購安排。</p>
+            <div class="product-gallery" id="product-gallery">
+      <figure class="product-shot">
+        <img src="assets/photos/enesco-01-tru-k11.jpg" alt="Toys&quot;R&quot;Us（K11 MUSEA）" loading="lazy"/>
+        <figcaption class="meta"><strong>Toys"R"Us（K11 MUSEA）</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/enesco-02-tru-counter.jpg" alt="Toys&quot;R&quot;Us" loading="lazy"/>
+        <figcaption class="meta"><strong>Toys"R"Us</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/enesco-03-homeless.jpg" alt="Homeless" loading="lazy"/>
+        <figcaption class="meta"><strong>Homeless</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/enesco-04-tru-shelf.jpg" alt="Toys&quot;R&quot;Us" loading="lazy"/>
+        <figcaption class="meta"><strong>Toys"R"Us</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/playshifu-01-simplytoys.jpg" alt="Simply Toys" loading="lazy"/>
+        <figcaption class="meta"><strong>Simply Toys</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/playshifu-02-bookazine.jpg" alt="Bookazine" loading="lazy"/>
+        <figcaption class="meta"><strong>Bookazine</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/playshifu-03-display.jpg" alt="玩具專門店" loading="lazy"/>
+        <figcaption class="meta"><strong>玩具專門店</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/playshifu-04-eslite.jpg" alt="誠品" loading="lazy"/>
+        <figcaption class="meta"><strong>誠品</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/robosen-01-tru-kiosk.jpg" alt="Toys&quot;R&quot;Us" loading="lazy"/>
+        <figcaption class="meta"><strong>Toys"R"Us</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/robosen-02-tru-display.jpg" alt="Toys&quot;R&quot;Us" loading="lazy"/>
+        <figcaption class="meta"><strong>Toys"R"Us</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/robosen-03-tru-kiosk2.jpg" alt="Toys&quot;R&quot;Us" loading="lazy"/>
+        <figcaption class="meta"><strong>Toys"R"Us</strong></figcaption>
+      </figure>
+      <figure class="product-shot">
+        <img src="assets/photos/robosen-04-specialty.jpg" alt="玩具專門店" loading="lazy"/>
+        <figcaption class="meta"><strong>玩具專門店</strong></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>四個步驟，每步目標清晰</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>了解產品</h3>
+        <p>對齊定位、目標客群、價位帶及可供應量，判斷較值得優先洽談的渠道類型——專門店、書店、Lifestyle，或便利店／超市線。</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>配對渠道</h3>
+        <p>按品類選定第一道門（通常一至兩間店或一類渠道），避免四類同時推進、資源分散；若需要覆蓋面，再評估便利店／超市的節奏。</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>準備資料</h3>
+        <p>整理 SKU、條碼、批發價／建議零售價、箱規、圖庫、年齡及安全認證、到貨節奏，以對齊各店入貨要求。</p>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <h3>落地與跟進</h3>
+        <p>對接入貨及陳列節奏；待有 sell-through 後，再討論補貨及跨類擴店。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>實體鋪貨與線上選品宜一併規劃</h2>
+    <p class="muted">不少品牌分開處理門市與官網／電商選品，導致資料與節奏不同步。我們傾向將實體與線上同步規劃：以同一套產品資料支援兩邊，減少重複準備，亦便於其後按銷售表現調整鋪貨重點。</p>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>了解您的產品適合哪一類渠道？</h2>
+    <p>請連同產品簡介、目標客群及大概價位與我們聯絡。我們會先回覆渠道方向建議——包括較適合專門店，抑或便利店／超市覆蓋——再決定下一步。</p>
+    <a class="btn btn-accent" href="mailto:info@sacgloballtd.com">聯絡我們</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-contact">
+    電郵：<a href="mailto:info@sacgloballtd.com">info@sacgloballtd.com</a><br>
+    WhatsApp：<a href="https://wa.me/85297612596" target="_blank" rel="noopener">+852 9761 2596</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
