@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SAC Global｜香港零售渠道上架</title>
+<meta name="description" content="協助品牌產品進入香港零售渠道——玩具專門店、書店、Lifestyle、便利店／超市及主題公園。1,000+ 零售店網絡夥伴。"/>
+<style>
+  :root {
+    --bg: #0B0B0D;
+    --bg-2: #141418;
+    --bg-3: #1C1C22;
+    --ink: #F5F2EC;
+    --muted: #A8A29A;
+    --line: rgba(255,255,255,0.08);
+    --accent: #FF5C39;
+    --accent-2: #FFB020;
+    --glow: rgba(255,92,57,0.35);
+    --card: #18181E;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "PingFang HK", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 19px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 18px; height: 2px;
+    background: var(--accent);
+  }
+  h1, h2, h3 { margin: 0; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+  h1 { font-size: clamp(40px, 6.5vw, 76px); }
+  h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 14px; }
+  h3 { font-size: 22px; }
+  .lede { color: var(--muted); font-size: 19px; max-width: 42rem; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 750;
+    font-size: 17px;
+    border: none;
+    box-shadow: 0 0 0 0 var(--glow), 0 12px 40px rgba(255,92,57,0.28);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .btn:hover { transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 0 32px var(--glow); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: none;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.4); box-shadow: none; filter: none; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    background: #050506;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 1.1fr 0.9fr;
+    gap: 6px;
+    opacity: 0.55;
+    filter: saturate(1.05) contrast(1.05);
+  }
+  .hero-bg figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+  }
+  .hero-bg figure:nth-child(1) { grid-row: 1 / 3; }
+  .hero-veil {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(105deg, rgba(5,5,6,0.96) 0%, rgba(5,5,6,0.82) 38%, rgba(5,5,6,0.45) 62%, rgba(5,5,6,0.75) 100%),
+      radial-gradient(ellipse at 70% 30%, rgba(255,92,57,0.18), transparent 50%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: center;
+    padding: 72px 0 48px;
+  }
+  .hero-copy { max-width: 40rem; }
+  .hero-copy .note {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+    max-width: 36rem;
+  }
+  .stat-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+  }
+  .stat-pill .num {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--accent-2);
+    letter-spacing: -0.04em;
+  }
+  .stat-pill .lab { font-size: 15px; color: var(--muted); font-weight: 600; }
+
+  /* ===== LOGO STRIP ===== */
+  .logo-strip {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+  .logo-strip .label {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .logo-rail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
+  }
+  .logo-tile {
+    width: 148px;
+    min-height: 118px;
+    background: #fff;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 10px 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+  .logo-tile .logo-img {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-tile img {
+    max-height: 60px;
+    max-width: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .logo-tile .logo-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .logo-tile.text-only .logo-img {
+    height: 48px;
+  }
+  .logo-tile.text-only .logo-img span {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+
+  /* Partner units inside channel cards */
+  .partner-grid {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+    gap: 8px;
+  }
+  .partner {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-height: 96px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  .partner .p-img {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partner img {
+    max-height: 44px;
+    max-width: 92px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .partner .p-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* ===== MOSAIC ===== */
+  section { padding: 72px 0; }
+  section.tight { padding: 48px 0; }
+  .section-head { margin-bottom: 28px; max-width: 40rem; }
+  .mosaic {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 140px;
+    gap: 10px;
+  }
+  .mosaic figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--bg-3);
+  }
+  .mosaic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+  }
+  .mosaic figure:hover img { transform: scale(1.06); }
+  .mosaic figcaption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 28px 14px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.78));
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .m1 { grid-column: span 5; grid-row: span 2; }
+  .m2 { grid-column: span 3; grid-row: span 2; }
+  .m3 { grid-column: span 4; grid-row: span 1; }
+  .m4 { grid-column: span 4; grid-row: span 1; }
+  .m5 { grid-column: span 4; grid-row: span 2; }
+  .m6 { grid-column: span 4; grid-row: span 2; }
+  .m7 { grid-column: span 4; grid-row: span 1; }
+  .m8 { grid-column: span 3; grid-row: span 1; }
+  .m9 { grid-column: span 3; grid-row: span 1; }
+  .m10 { grid-column: span 3; grid-row: span 1; }
+  .m11 { grid-column: span 3; grid-row: span 1; }
+  .m12 { grid-column: span 6; grid-row: span 1; }
+
+  /* ===== CHANNELS + MAP ===== */
+  .channels {
+    background: linear-gradient(180deg, var(--bg) 0%, #101014 100%);
+  }
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .channel-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 18px 18px;
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+  }
+  .channel-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .channel-card.conv::before { background: #38BDF8; }
+  .channel-card.toys::before { background: #FF5C39; }
+  .channel-card.book::before { background: #5B8CFF; }
+  .channel-card.life::before { background: #39D98A; }
+  .channel-card.theme::before { background: #FFB020; }
+  .channel-card .pin {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #0B0B0D;
+    margin-bottom: 14px;
+  }
+  .channel-card.conv .pin { background: #38BDF8; }
+  .channel-card.toys .pin { background: #FF5C39; }
+  .channel-card.book .pin { background: #5B8CFF; }
+  .channel-card.life .pin { background: #39D98A; }
+  .channel-card.theme .pin { background: #FFB020; }
+  .channel-card h3 { margin-bottom: 8px; }
+  .channel-card .tags {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .channel-card .tags span {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(245,242,236,0.8);
+  }
+
+  /* ===== STEPS ===== */
+  .steps-band {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .step {
+    background: var(--bg-3);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border: 1px solid var(--line);
+  }
+  .step .n {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .step h3 { margin-bottom: 8px; font-size: 20px; }
+  .step p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  /* ===== CTA ===== */
+  .cta {
+    position: relative;
+    padding: 88px 0;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: "";
+    position: absolute;
+    inset: -20% 20% auto;
+    height: 420px;
+    background: radial-gradient(ellipse, rgba(255,92,57,0.22), transparent 65%);
+    pointer-events: none;
+  }
+  .cta-box {
+    position: relative;
+    border-radius: 28px;
+    padding: 48px 40px;
+    background:
+      linear-gradient(135deg, rgba(255,92,57,0.16), rgba(255,176,32,0.06) 40%, rgba(20,20,24,0.9)),
+      var(--bg-2);
+    border: 1px solid rgba(255,92,57,0.28);
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .cta-box p { color: var(--muted); margin: 10px 0 0; max-width: 36rem; }
+  .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+  .cta-actions .btn { width: 100%; }
+
+  footer {
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+  }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+  footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .footer-contact { margin-top: 10px; font-size: 16px; line-height: 1.8; }
+
+  @media (max-width: 980px) {
+    .hero-inner { grid-template-columns: 1fr; padding: 56px 0 36px; }
+    .hero { min-height: auto; }
+    .hero-bg { opacity: 0.35; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+    .hero-bg figure:nth-child(1) { grid-row: auto; }
+    .hero-bg figure:nth-child(n+5) { display: none; }
+    .channel-grid, .steps { grid-template-columns: 1fr 1fr; }
+    .cta-box { grid-template-columns: 1fr; padding: 36px 24px; }
+    .mosaic { grid-auto-rows: 120px; }
+    .m1, .m2, .m3, .m4, .m5, .m6, .m7, .m8, .m9, .m10, .m11, .m12 {
+      grid-column: span 6; grid-row: span 1;
+    }
+    .m1, .m2 { grid-row: span 2; }
+  }
+  @media (max-width: 560px) {
+    .channel-grid, .steps { grid-template-columns: 1fr; }
+    .logo-tile { width: 120px; min-height: 100px; }
+    .logo-tile img { max-height: 48px; max-width: 96px; }
+    .partner-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+    .m1, .m2, .m3, .m4, .m5, .m6, .m7, .m8, .m9, .m10, .m11, .m12 {
+      grid-column: span 12;
+    }
+    .m1, .m2 { grid-row: span 2; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <figure><img src="https://img.shoplineapp.com/media/image_clips/6ac74b441dfa63241b1753d9/original.jpg" alt=""/></figure>
+    <figure><img src="https://img.shoplineapp.com/media/image_clips/6ac74b45f51387b2f278e477/original.jpg" alt=""/></figure>
+    <figure><img src="https://img.shoplineapp.com/media/image_clips/6ac74b4424e78bc36b56319a/original.jpg" alt=""/></figure>
+    <figure><img src="https://img.shoplineapp.com/media/image_clips/6ac74b445cfa7c00105bcfff/original.jpg" alt=""/></figure>
+    <figure><img src="https://img.shoplineapp.com/media/image_clips/6ac74b443a8794640480f47a/original.jpg" alt=""/></figure>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>協助品牌產品進入香港零售渠道</h1>
+      <div class="stat-pill" aria-label="零售網絡規模">
+        <span class="num">1,000+</span>
+        <span class="lab">零售店網絡夥伴 · 按品類配對</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="mailto:info@sacgloballtd.com">聯絡我們</a>
+        <a class="btn btn-ghost" href="https://wa.me/85297612596" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="logo-strip" aria-label="合作零售商 logo">
+  <div class="wrap">
+        <div class="logo-rail">
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa15ea7206b0b04fa5/original.png" alt="7-Eleven"/></div><div class="logo-name">7-Eleven</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74ba98bc48f36158bbeb5/original.png" alt="APITA"/></div><div class="logo-name">APITA</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa3ed127349d9cbabd/original.png" alt="Toys R Us"/></div><div class="logo-name">Toys"R"Us</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44d1527ac9af1dc9c3/original.png" alt="Simply Toys"/></div><div class="logo-name">Simply Toys</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74a88e264b6002259db1a/original.png" alt="IDEAS"/></div><div class="logo-name">IDEAS</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44800206934631b694/original.png" alt="GIFT & TAKE"/></div><div class="logo-name">GIFT & TAKE</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74a88c2318bc8dc63021d/original.png" alt="TINY 微影"/></div><div class="logo-name">TINY 微影</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44dec8fb94bcb71b36/original.png" alt="Elite / 精品"/></div><div class="logo-name">Elite / 精品</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44467de2be96e541e0/original.png" alt="Bookazine"/></div><div class="logo-name">Bookazine</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74ba9441d65f4530ca75d/original.png" alt="誠品 eslite"/></div><div class="logo-name">誠品 eslite</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa9f267ea8b29cafa7/original.png" alt="三聯書店"/></div><div class="logo-name">三聯書店</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b4448e9eb47778da0d6/original.png" alt="商務印書館"/></div><div class="logo-name">商務印書館</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44b1a605efe69812ef/original.png" alt="中華書局"/></div><div class="logo-name">中華書局</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44e17e53ccec4164e6/original.png" alt="Homeless"/></div><div class="logo-name">Homeless</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b448b9d3afaccc00845/original.png" alt="Wake Concept Store"/></div><div class="logo-name">Wake Concept Store</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b443ebedb09213e8129/original.png" alt="Wilson 衛訊"/></div><div class="logo-name">Wilson 衛訊</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b448f52170dcabe9562/original.png" alt="TOYZONE"/></div><div class="logo-name">TOYZONE</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b449f267e9fa29cb1ed/original.png" alt="Shell House"/></div><div class="logo-name">Shell House</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b442fc5be6478929239/original.png" alt="COG"/></div><div class="logo-name">COG</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa3f37f813c11a8451/original.png" alt="KOL POP"/></div><div class="logo-name">KOL POP</div></div>
+      <div class="logo-tile"><div class="logo-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44cf587dcd7ba7f493/original.png" alt="HK Disneyland"/></div><div class="logo-name">HK Disneyland</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight" id="photos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">In-store reality</div>
+      <h2>已上架產品 · 店內實拍</h2>
+    </div>
+    <div class="mosaic">
+      <figure class="m1">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b445cfa7c00105bcfff/original.jpg" alt="Toys R Us K11 MUSEA" loading="lazy"/>
+        <figcaption>Toys"R"Us · K11 MUSEA</figcaption>
+      </figure>
+      <figure class="m2">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b45f51387b2f278e477/original.jpg" alt="Toys R Us display" loading="lazy"/>
+        <figcaption>Toys"R"Us · 陳列</figcaption>
+      </figure>
+      <figure class="m3">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b4424e78bc36b56319a/original.jpg" alt="誠品" loading="lazy"/>
+        <figcaption>誠品</figcaption>
+      </figure>
+      <figure class="m4">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b4473c9543005573999/original.jpg" alt="Homeless" loading="lazy"/>
+        <figcaption>Homeless</figcaption>
+      </figure>
+      <figure class="m5">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b441dfa63241b1753d9/original.jpg" alt="Toys R Us shelf" loading="lazy"/>
+        <figcaption>Toys"R"Us · 貨架</figcaption>
+      </figure>
+      <figure class="m6">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b443a8794640480f47a/original.jpg" alt="Toys R Us kiosk" loading="lazy"/>
+        <figcaption>Toys"R"Us · 專櫃</figcaption>
+      </figure>
+      <figure class="m7">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b440c174cdaa9e76656/original.jpg" alt="Simply Toys" loading="lazy"/>
+        <figcaption>Simply Toys</figcaption>
+      </figure>
+      <figure class="m8">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b458f52170dcabe9563/original.jpg" alt="Bookazine" loading="lazy"/>
+        <figcaption>Bookazine</figcaption>
+      </figure>
+      <figure class="m9">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b444c5bc5685288144d/original.jpg" alt="Toys R Us counter" loading="lazy"/>
+        <figcaption>Toys"R"Us</figcaption>
+      </figure>
+      <figure class="m10">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b45199b99273f22ad04/original.jpg" alt="Toys R Us kiosk" loading="lazy"/>
+        <figcaption>Toys"R"Us</figcaption>
+      </figure>
+      <figure class="m11">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b4524e78bfd2156240d/original.jpg" alt="玩具專門店" loading="lazy"/>
+        <figcaption>玩具專門店</figcaption>
+      </figure>
+      <figure class="m12">
+        <img src="https://img.shoplineapp.com/media/image_clips/6ac74b458a4c5c552bbe4bff/original.jpg" alt="玩具專門店" loading="lazy"/>
+        <figcaption>玩具專門店 · 專區</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="channels" id="channels">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Five channel types</div>
+      <h2>五類渠道 · 按品類配對</h2>
+    </div>
+    <div class="channel-grid">
+      <article class="channel-card conv">
+        <div class="pin" aria-hidden="true">01</div>
+        <h3>便利店／超市</h3>
+        <div class="partner-grid">
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa15ea7206b0b04fa5/original.png" alt="7-Eleven"/></div><div class="p-name">7-Eleven</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74ba98bc48f36158bbeb5/original.png" alt="APITA"/></div><div class="p-name">APITA</div></div>
+        </div>
+      </article>
+      <article class="channel-card toys">
+        <div class="pin" aria-hidden="true">02</div>
+        <h3>Toys</h3>
+                <div class="partner-grid">
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa3ed127349d9cbabd/original.png" alt="Toys R Us"/></div><div class="p-name">Toys"R"Us</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44d1527ac9af1dc9c3/original.png" alt="Simply Toys"/></div><div class="p-name">Simply Toys</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74a88e264b6002259db1a/original.png" alt="IDEAS"/></div><div class="p-name">IDEAS</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44800206934631b694/original.png" alt="GIFT & TAKE"/></div><div class="p-name">GIFT & TAKE</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74a88c2318bc8dc63021d/original.png" alt="TINY 微影"/></div><div class="p-name">TINY 微影</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44dec8fb94bcb71b36/original.png" alt="Elite / 精品"/></div><div class="p-name">Elite / 精品</div></div>
+        </div>
+      </article>
+      <article class="channel-card book">
+        <div class="pin" aria-hidden="true">03</div>
+        <h3>Book Store</h3>
+        <div class="partner-grid">
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44467de2be96e541e0/original.png" alt="Bookazine"/></div><div class="p-name">Bookazine</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74ba9441d65f4530ca75d/original.png" alt="誠品"/></div><div class="p-name">誠品</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa9f267ea8b29cafa7/original.png" alt="三聯"/></div><div class="p-name">三聯</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44e17e53ccec4164e6/original.png" alt="Homeless"/></div><div class="p-name">Homeless</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b4448e9eb47778da0d6/original.png" alt="商務印書館"/></div><div class="p-name">商務印書館</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44b1a605efe69812ef/original.png" alt="中華書局"/></div><div class="p-name">中華書局</div></div>
+        </div>
+      </article>
+      <article class="channel-card life">
+        <div class="pin" aria-hidden="true">04</div>
+        <h3>Lifestyle</h3>
+        <div class="partner-grid">
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b448b9d3afaccc00845/original.png" alt="Wake Concept Store"/></div><div class="p-name">Wake Concept Store</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b443ebedb09213e8129/original.png" alt="Wilson 衛訊"/></div><div class="p-name">Wilson 衛訊</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b448f52170dcabe9562/original.png" alt="TOYZONE"/></div><div class="p-name">TOYZONE</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b449f267e9fa29cb1ed/original.png" alt="Shell House"/></div><div class="p-name">Shell House</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b442fc5be6478929239/original.png" alt="COG"/></div><div class="p-name">COG</div></div>
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74baa3f37f813c11a8451/original.png" alt="KOL POP"/></div><div class="p-name">KOL POP</div></div>
+        </div>
+      </article>
+      <article class="channel-card theme">
+        <div class="pin" aria-hidden="true">05</div>
+        <h3>Theme Park</h3>
+        <div class="partner-grid">
+          <div class="partner"><div class="p-img"><img src="https://img.shoplineapp.com/media/image_clips/6ac74b44cf587dcd7ba7f493/original.png" alt="HK Disneyland"/></div><div class="p-name">HK Disneyland</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="steps-band" id="steps">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>四步落地</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>了解產品</h3>
+        <p>對齊產品定位、目標客群、價位與供應量，判斷哪些渠道最適合著手進行。</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>配對渠道</h3>
+        <p>為產品配對適合零售渠道</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>準備資料</h3>
+        <p>備齊 SKU、條碼、批發／零售價、產品圖庫、認證文件與到貨節奏，方便對接入貨。</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>落地跟進</h3>
+        <p>對齊入貨與陳列</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <div class="eyebrow">Next step</div>
+        <h2>想了解您的產品適合哪一類渠道？</h2>
+        <p>請連同產品簡介、目標客群及大概價位與我們聯絡。我們會回覆渠道方向建議，再決定後續安排。</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn" href="mailto:info@sacgloballtd.com">聯絡我們 · Email</a>
+        <a class="btn btn-ghost" href="https://wa.me/85297612596" target="_blank" rel="noopener">WhatsApp · +852 9761 2596</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© SAC Global · 香港零售渠道上架服務</div>
+    <div class="footer-contact">
+      電郵：<a href="mailto:info@sacgloballtd.com">info@sacgloballtd.com</a>
+      · WhatsApp：<a href="https://wa.me/85297612596" target="_blank" rel="noopener">+852 9761 2596</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
