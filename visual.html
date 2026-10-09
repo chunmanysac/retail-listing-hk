@@ -115,11 +115,6 @@
     background: #050506;
   }
   .hero-bg figure:nth-child(1) { grid-row: 1 / 3; }
-  .mosaic figure.m2 img {
-    object-fit: contain;
-    object-position: center;
-    background: #141418;
-  }
   .hero-veil {
     position: absolute;
     inset: 0;
@@ -277,7 +272,7 @@
   .mosaic {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 110px;
+    grid-auto-rows: 200px;
     gap: 10px;
   }
   .mosaic figure {
@@ -290,11 +285,12 @@
   .mosaic img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    background: #141418;
     transition: transform .45s ease;
   }
-  .mosaic figure:hover img { transform: scale(1.06); }
+  .mosaic figure:hover img { transform: scale(1.03); }
   .mosaic figcaption {
     position: absolute;
     left: 0; right: 0; bottom: 0;
@@ -305,17 +301,17 @@
     color: #fff;
   }
   .m1 { grid-column: span 4; grid-row: span 2; }
-  .m2 { grid-column: span 3; grid-row: span 1; }
-  .m3 { grid-column: span 4; grid-row: span 1; }
-  .m4 { grid-column: span 4; grid-row: span 1; }
+  .m2 { grid-column: span 3; grid-row: span 2; }
+  .m3 { grid-column: span 4; grid-row: span 2; }
+  .m4 { grid-column: span 4; grid-row: span 2; }
   .m5 { grid-column: span 4; grid-row: span 2; }
   .m6 { grid-column: span 4; grid-row: span 2; }
-  .m7 { grid-column: span 4; grid-row: span 1; }
-  .m8 { grid-column: span 3; grid-row: span 1; }
-  .m9 { grid-column: span 3; grid-row: span 1; }
-  .m10 { grid-column: span 3; grid-row: span 1; }
-  .m11 { grid-column: span 3; grid-row: span 1; }
-  .m12 { grid-column: span 6; grid-row: span 1; }
+  .m7 { grid-column: span 4; grid-row: span 2; }
+  .m8 { grid-column: span 3; grid-row: span 2; }
+  .m9 { grid-column: span 3; grid-row: span 2; }
+  .m10 { grid-column: span 3; grid-row: span 2; }
+  .m11 { grid-column: span 3; grid-row: span 2; }
+  .m12 { grid-column: span 6; grid-row: span 2; }
 
   /* ===== CHANNELS + MAP ===== */
   .channels {
@@ -457,7 +453,7 @@
     .hero-bg figure:nth-child(n+5) { display: none; }
     .channel-grid, .steps { grid-template-columns: 1fr 1fr; }
     .cta-box { grid-template-columns: 1fr; padding: 36px 24px; }
-    .mosaic { grid-auto-rows: 120px; }
+    .mosaic { grid-auto-rows: 160px; }
     .m1, .m2, .m3, .m4, .m5, .m6, .m7, .m8, .m9, .m10, .m11, .m12 {
       grid-column: span 6; grid-row: span 1;
     }
