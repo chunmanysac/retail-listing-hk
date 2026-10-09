@@ -112,6 +112,17 @@
     transform: scale(1.04);
   }
   .hero-bg figure:nth-child(1) { grid-row: 1 / 3; }
+  .hero-bg figure:nth-child(2) img {
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1);
+    background: #050506;
+  }
+  .mosaic figure.m2 img {
+    object-fit: contain;
+    object-position: center;
+    background: #141418;
+  }
   .hero-veil {
     position: absolute;
     inset: 0;
@@ -296,7 +307,7 @@
     color: #fff;
   }
   .m1 { grid-column: span 5; grid-row: span 2; }
-  .m2 { grid-column: span 3; grid-row: span 2; }
+  .m2 { grid-column: span 3; grid-row: span 1; }
   .m3 { grid-column: span 4; grid-row: span 1; }
   .m4 { grid-column: span 4; grid-row: span 1; }
   .m5 { grid-column: span 4; grid-row: span 2; }
